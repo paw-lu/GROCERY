@@ -1,0 +1,42 @@
+$mdc-theme-primary: #FEDBD0;
+$mdc-theme-on-primary: #442C2E;
+$mdc-theme-secondary: #FEEAE6;
+$mdc-theme-on-secondary: #442C2E;
+$mdc-theme-surface: #FFFBFA;
+$mdc-theme-on-surface: #442C2E;
+$mdc-theme-background: #FFFFFF;
+$mdc-theme-on-background: #442C2E;
+
+@import "@material/fab/mdc-fab";
+@import "@material/button/mdc-button";
+
+.mdc-button {
+  padding: 100px;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding-top: 0.1px; // Prevent header h1 margin from pushing body down
+}
+
+// Login page styles
+
+.app-fab--absolute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+
+}
+
+@media(min-width: 1024px) {
+   .app-fab--absolute {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}

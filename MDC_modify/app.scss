@@ -151,19 +151,19 @@ body {
   padding: 10px;
 }
 
-// .app-fab--absolute {
-//   position: fixed;
-//   bottom: 1rem;
-//   right: 1rem;
-//
-// }
-//
-// @media(min-width: 1024000px) {
-//    .app-fab--absolute {
-//     bottom: 1.5rem;
-//     right: 1.5rem;
-//   }
-// }
+.app-fab--absolute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+
+}
+
+@media(min-width: 1024px) {
+   .app-fab--absolute {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
 
 
 .mdc-image-list__label {
