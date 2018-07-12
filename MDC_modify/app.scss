@@ -8,12 +8,19 @@ $mdc-theme-background: #FFFFFF;
 $mdc-theme-on-background: #442C2E;
 
 @import "@material/textfield/mdc-text-field";
+@import "@material/select/mdc-select";
 @import "@material/button/mdc-button";
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
 @import "@material/image-list/mdc-image-list";
 @import "@material/typography/mdc-typography";
 @import "@material/elevation/mdc-elevation";
+
+
+@import "@material/form-field/mdc-form-field";
+@import "@material/checkbox/mdc-checkbox";
+@import "@material/fab/mdc-fab";
+
 
 html, body {
   height: 100%;
@@ -38,6 +45,14 @@ body {
   width: 300px;
   margin: 20px auto;
 }
+
+.day-select,
+.crane-select {
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+}
+
 
 .header {
   text-align: center;
@@ -132,8 +147,30 @@ body {
 .mdc-image-list__item {
   padding: 10px;
 }
+.mdc-checkbox {
+  padding: 10px;
+}
+
+// .app-fab--absolute {
+//   position: fixed;
+//   bottom: 1rem;
+//   right: 1rem;
+//
+// }
+//
+// @media(min-width: 1024000px) {
+//    .app-fab--absolute {
+//     bottom: 1.5rem;
+//     right: 1.5rem;
+//   }
+// }
+
 
 .mdc-image-list__label {
+  @include mdc-typography(subtitle2);
+}
+
+.mdc-checkbox-label {
   @include mdc-typography(subtitle2);
 }
 
