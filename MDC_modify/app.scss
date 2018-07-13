@@ -97,6 +97,12 @@ body {
   overflow: auto;
 }
 
+.plot-list {
+  padding: 80px 100px 0 100px;
+  overflow: auto;
+}
+
+
 .grocery-drawer {
   @include mdc-drawer-fill-color-accessible(primary);
   @include mdc-drawer-ink-color(on-primary);
@@ -128,6 +134,9 @@ body {
   justify-content: center;
 }
 
+.mdc-layout-grid__cell {
+  padding: 10px;
+}
 
 .mdc-image-list__item {
   padding: 10px;
@@ -150,10 +159,15 @@ body {
   }
 }
 
+.m-charts {
+  padding: 10px;
+}
 
 .mdc-image-list__label {
   @include mdc-typography(subtitle2);
 }
+
+
 
 .mdc-checkbox-label {
   @include mdc-typography(subtitle2);

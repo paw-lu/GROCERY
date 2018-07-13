@@ -43,7 +43,62 @@
     <section class="header">
       <h1>Plots</h1>
     </section>
-    
+    <div class="mdc-layout-grid plot-list">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">
+
+          <head class="m-charts">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {'packages':['line']});
+            google.charts.setOnLoadCallback(drawSheetName);
+
+            function drawSheetName() {
+           var queryString = encodeURIComponent('SELECT A, B, C');
+
+           var query = new google.visualization.Query(
+               'https://docs.google.com/spreadsheets/d/1AtM3t0BdOYQmXbL-sLKbcAQZlI2o6g2dPgoFGbCChy0/edit#gid=0' + queryString);
+           query.send(handleSampleDataQueryResponse);
+          };
+
+
+      function handleSampleDataQueryResponse(response) {
+       if (response.isError()) {
+         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+         return;
+       };
+
+       var data = response.getDataTable();
+
+       var options = {
+         chart: {
+           title: 'VPFM phase',
+           subtitle: 'Croconic acid thin films'
+         },
+
+         legend: {position:'none'
+         },
+
+         vAxis: {title: 'Phase (\u00b0)'
+         },
+         hAxis: {title: 'Bias (V)'
+         },
+       };
+
+       var chart = new google.charts.Line(document.getElementById('columnchart_material'));
+       chart.draw(data, google.charts.Line.convertOptions(options));
+
+
+      }
+
+      </script>
+       </head>
+      <body>
+       <div id="columnchart_material" style="width: 1000px; height: 500px;"></div>
+     </body>
+   </div>
+ </div>
+</div>
 
   </div>
   <script src="bundle.js" async></script>
