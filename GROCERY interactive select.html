@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var beerData = google.visualization.arrayToDataTable([
+                      ['Aisle', 'Relative aisle orders'],
+                      ['Beauty', 0],
+                      ['Tofu meat alternatives', 0.16],
+                      ['Bulk dried fruits vegetables', 0.16],
+                      ['Soft drinks', 1.9],
+                      ['Frozen pizza', 1.7]
+                    ]);
+
+        var yogurtData = google.visualization.arrayToDataTable([
+                        ['Aisle', 'Relative aisle orders'],
+                        ['Beers coolers', 0.42],
+                        ['Granola', 2.28],
+                        ['Baby food formula	', 1.99],
+                        ['Fruit vegetable snacks', 1.6],
+                        ['Muscle pain relief', 0.73],
+                        ['Soft drinks', 0.89]
+                      ]);
+
+        var veggieData = google.visualization.arrayToDataTable([
+                        ['Aisle', 'Relative aisle orders'],
+                        ['Beers coolers', 0.43],
+                        ['Soft drinks', 0.74],
+                        ['Cookies cakes', 0.88],
+                        ['Fresh herbs', 1.94],
+                        ['Seafood counter', 1.76],
+                        ['Latino foods', 1.63]
+                      ]);
+
+      var veggieData = google.visualization.arrayToDataTable([
+                      ['Aisle', 'Relative aisle orders'],
+                      ['Beers coolers', 0.43],
+                      ['Soft drinks', 0.74],
+                      ['Cookies cakes', 0.88],
+                      ['Fresh herbs', 1.94],
+                      ['Seafood counter', 1.76],
+                      ['Latino foods', 1.63]
+                    ]);
+
+        var tofuData = google.visualization.arrayToDataTable([
+                      ['Aisle', 'Relative aisle orders'],
+                      ['Beers coolers', 0.12],
+                      ['Soft drinks', 0.56],
+                      ['Frozen vegan', 7.27],
+                      ['Indian foods', 4.38],
+                      ['Asian foods', 3.71],
+                      ['Soy lactosefree', 2.21],
+                      ['Poultry counter', 0.76]
+                    ]);
+        var select = document.getElementById('select-menu')
+
+        var options = {
+          chart: {
+            title: 'Orders with an item from the beers and coolers aisle',
+          },
+          fontSize: 25,
+          colors: '#FEDBD0',
+          vAxis: {
+            title: 'Relative aisle orders',
+            titleTextStyle: {
+              fontSize: 13
+            },
+            textStyle: {
+              fontSize: 13
+            }
+          },
+          hAxis: {
+            // Slanted text not supported yet for Material versions
+            // slantedText: true,
+            // slantedTextAngle: 45,
+            titleTextStyle: {
+              fontSize: 13
+            },
+            textStyle: {
+              fontSize: 13
+            },
+          },
+          legend: {
+            position: 'none'
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(beerData, google.charts.Bar.convertOptions(options));
+
+        select.onchange = function(e) {
+          if (e.target.value === 'beer') {
+            options.chart.title = 'Orders with an item from the beers and coolers aisle';
+            chart.draw(beerData, google.charts.Bar.convertOptions(options));
+          };
+          if (e.target.value === 'yogurt') {
+            options.chart.title = 'Orders with an item from the yogurt aisle';
+            chart.draw(yogurtData, google.charts.Bar.convertOptions(options));
+          };
+          if (e.target.value === 'veggie') {
+            options.chart.title = 'Orders with an item from the fresh vegetables aisle';
+            chart.draw(veggieData, google.charts.Bar.convertOptions(options));
+          };
+          if (e.target.value === 'tofu') {
+            options.chart.title = 'Orders with an item from the tofu meat alternatives aisle';
+            chart.draw(tofuData, google.charts.Bar.convertOptions(options));
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="select-menu">
+      <select>
+        <option value="beer">Beer</option>
+        <option value="yogurt">Yogurt</option>
+        <option value="veggie">Vegetables</option>
+        <option value="tofu">Tofu</option>
+      </select>
+    </div>
+    <br/>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
