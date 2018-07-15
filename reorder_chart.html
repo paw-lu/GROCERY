@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Product', 'Reorder percentage'],
+          ['Cookies', 0.0361],
+          ['Cereal', 0.0642],
+          ['Ice cream', -0.0107],
+          ['Coffee', 0.1143],
+          ['Apples', 0.1451],
+          ['Yogurt', 0.1783],
+          ['Hot sauce', -0.1324],
+          ['Milk', 0.2139],
+          ['Pretzels', 0.1049],
+          ['Soup', -0.0723]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Orders with an item from beers and coolers aisle',
+          },
+          fontSize: 25,
+          colors: '#FEDBD0',
+          vAxis: {
+            title: 'New purchases \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063 \u2063Reorders',
+            titleTextStyle: {
+              fontSize: 13
+            },
+            textStyle: {
+              fontSize: 13
+            },
+            baselineColor: '#442C2E',
+            //This doesn't work on Material
+            //ticks: [{v:-0.2, f:'30%'}, {v:-0.15, f:'b'}, {v:-0.10, f:'c'}, {v:-0.5, f:'d'}, {v:0, f:'dddd'}, {v:0.5, f:'dsf'}, {v:1.0, f:'sferere'}, {v:1.5, f:'sfe'}, {v:2.0, f:'sefe'}, {v:2.5, f:'hello'}]
+          },
+          hAxis: {
+            // Slanted text not supported yet for Material versions
+            // slantedText: true,
+            // slantedTextAngle: 45,
+            titleTextStyle: {
+              fontSize: 13
+            },
+            textStyle: {
+              fontSize: 13
+            },
+            ticks: [-0.2, 0, 0.2]
+          },
+          legend: {
+            position: 'none'
+          },
+
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
