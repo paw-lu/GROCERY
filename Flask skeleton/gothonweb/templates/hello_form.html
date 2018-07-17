@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Fill out this form</h1>
+
+<form action="/hello" method="POST">
+  Input <input type="text" name="n-put">
+  <br/>
+  <input type="checkbox" name="checkercheck" value="Celery">
+  <input type="submit">
+</form>
+
+{% endblock %}
