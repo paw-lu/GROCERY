@@ -1,41 +1,8 @@
-# Flask on Heroku
+# **GROCERY**
+![screenshot](https://lh3.googleusercontent.com/-88_AVB_EQs3Yi-so2I1yOM9aqKZwWL97DcnKiLCzIsxt1f1-swIZ1AeZ4kUV51kFCnYa0WNSg6l8R3lIYDHNsqOWkOEcC3gyj1uC3biGHarplDDR-mbeFWZPZyMJx9zYVkGPltANhveczZv4F-Ct1YaCY5OVUUfXfIe547gRo0GBXLQigCkJ4ih7i5ebbCOFtNfJccw9wUTqFdHy7W8bjevzoW3KuFUES8UKe8CLnFm6rVXUD1znLEgw7JelluS47f2G65jCqGsACQzbSi4lFDOB1BrtbtNjAPe1of2l9bwz3-IzCxX5SIGllrIsP5mvOxu2geLfSH_Jw_2VMJ7-svBrLmzRaZ9zs01dRiRxorIYzAtHnA5LH2tOVYVIh6iSjM_Jq--H7sSlhDMVlzGMsQGY16ZF10Chi6mt79cW_8ux2fCFpqu_j1pZHWINkT4Xf2Sx4EQR8143VTBdOAAnJImbfUWOBsTew4CnT27vTqE1obus1bfaEg1LSW4N88yqlwC-QbBklhYL-HrRp0LeiaNE13ZNfWlBcDSdHXt1A3CDQw1-Lp72-Q8Zn4FH00o3cvzQJ-fZYfma6MPaem6ooCm43rJPxCFU35CFYdA=w1422-h1122-no)
 
-This project is intended to help you tie together some important concepts and
-technologies from the 12-day course, including Git, Flask, JSON, Pandas,
-Requests, Heroku, and Bokeh for visualization.
+**GROCERY** is a recommendation app for predicting what a user will buy on their next
+grocery trip based on their previous purchases. It uses tf-idf to compare a user's
+orders to that of other users, and recommends items based on their similarity.
 
-The repository contains a basic template for a Flask configuration that will
-work on Heroku.
-
-A [finished example](https://lemurian.herokuapp.com) that demonstrates some basic functionality.
-
-## Step 1: Setup and deploy
-- Git clone the existing template repository.
-- `Procfile`, `requirements.txt`, `conda-requirements.txt`, and `runtime.txt`
-  contain some default settings.
-- There is some boilerplate HTML in `templates/`
-- Create Heroku application with `heroku create <app_name>` or leave blank to
-  auto-generate a name.
-- (Suggested) Use the [conda buildpack](https://github.com/kennethreitz/conda-buildpack).
-  If you choose not to, put all requirements into `requirements.txt`
-
-  `heroku config:add BUILDPACK_URL=https://github.com/kennethreitz/conda-buildpack.git`
-
-  The advantages of conda include easier virtual environment management and fast package installation from binaries (as compared to the compilation that pip-installed packages sometimes require).
-  One disadvantage is that binaries take up a lot of memory, and the slug pushed to Heroku is limited to 300 MB. Another note is that the conda buildpack is being deprecated in favor of a Docker solution (see [docker branch](https://github.com/thedataincubator/flask-framework/tree/docker) of this repo for an example).
-- Deploy to Heroku: `git push heroku master`
-- You should be able to see your site at `https://<app_name>.herokuapp.com`
-- A useful reference is the Heroku [quickstart guide](https://devcenter.heroku.com/articles/getting-started-with-python-o).
-
-## Step 2: Get data from API and put it in pandas
-- Use the `requests` library to grab some data from a public API. This will
-  often be in JSON format, in which case `simplejson` will be useful.
-- Build in some interactivity by having the user submit a form which determines which data is requested.
-- Create a `pandas` dataframe with the data.
-
-## Step 3: Use Bokeh to plot pandas data
-- Create a Bokeh plot from the dataframe.
-- Consult the Bokeh [documentation](http://bokeh.pydata.org/en/latest/docs/user_guide/embed.html)
-  and [examples](https://github.com/bokeh/bokeh/tree/master/examples/embed).
-- Make the plot visible on your website through embedded HTML or other methods - this is where Flask comes in to manage the interactivity and display the desired content.
-- Some good references for Flask: [This article](https://realpython.com/blog/python/python-web-applications-with-flask-part-i/), especially the links in "Starting off", and [this tutorial](https://github.com/bev-a-tron/MyFlaskTutorial).
+[Check out the website](bit.ly/GROCERY_PAULO)
